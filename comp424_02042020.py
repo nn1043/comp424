@@ -17,9 +17,8 @@ def main():
             print("Split (SPLIT)")
             print("Quit Program (QUIT)")
         elif user_response.upper() == "VIEW":
-            print(sequence_1)
-            print(sequence_2)
-            print(sequence_3)
+            for i in sequences:
+                print(sequences[i])
         elif user_response.upper() == "CONCAT":
             concatenation()
         elif user_response.upper() == "SPLIT":
