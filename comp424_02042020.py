@@ -4,13 +4,13 @@ This Python file allows users to test their understanding of Python string
 methods in a closed environment.
 Nicholas Noboa
 Created 2/4/20
-Updated 2/17/20
+Updated 2/18/20
 """
 
 in_use_seq = []
 sequences = {}
 dict_counter = 0
-
+upperlower = ""
 
 def main():
     """
@@ -36,9 +36,12 @@ user interface and allows the user to access relavant functions.
         elif user_response.upper() == "ADD":
             add_sequence()
         elif user_response.upper() == "UPPER":
-            make_uppercase()
+            global upperlower
+            upperlower = "UPPER"
+            make_upperlower()
         elif user_response.upper() == "LOWER":
-            make_lowercase()
+            upperlower = "LOWER"
+            make_upperlower()
         elif user_response.upper() == "CONCAT":
             concatenation()
         elif user_response.upper() == "SPLIT":
@@ -102,11 +105,13 @@ unecessary repetition of code.
         print("Not a valid sequence.")
 
 
-def make_uppercase():
-    """
-This function takes the desired test sequence and applies .upper() to it, and
-tests to see if the user's input response matches.
-    """
+def make_upperlower():
+        """
+This function takes the desired test sequence and applies .upper() or .lower()
+to it, and tests to see if the user's input response matches. This function is
+a modified version of make_uppercase() and make_lowercase(), now removed
+functions.
+        """
     choose_sequence()
     global in_use_seq  # Again, I broke something and needed to reissue the
     if in_use_seq == []:  # global parameter in order to avoid using a local
@@ -117,47 +122,23 @@ tests to see if the user's input response matches.
             upper_str = word  # spaces.
         else:
             upper_str = upper_str + " " + word
+    global upperlower
+    if upperlower == "UPPER":
+        real_answer = upper_str.upper()
+    elif upperlower == "LOWER":
+        real_answer = upper_str.lower()
 # The below portion is echoed by every string method function. There's probably
 # some way to make this a reusable function.
-    real_answer = upper_str.upper()
-    print("What would this sequence produce if .upper() was used?")
+    print(
+        "What would this sequence produce if ." + upperlower.lower() +
+        "() was used?"
+        )
     user_answer = input()
     if user_answer == real_answer:  # Simple comparator.
         print("Correct.")
     else:
         print("Incorrect. The correct answer is:")
         print(real_answer)
-
-
-def make_lowercase():
-    """
-This function takes the desired test sequence and applies .lower() to it, and
-tests to see if the user's input response matches. Functions almost identical
-to make_uppercase().
-    """
-    choose_sequence()
-    global in_use_seq
-    if in_use_seq == []:
-        return
-    lower_str = ""
-    for word in in_use_seq:
-        if lower_str == "":
-            lower_str = word
-        else:
-            lower_str = lower_str + " " + word
-    real_answer = lower_str.lower()
-    print("What would this sequence produce if .lower() was used?")
-    user_answer = input()
-    if user_answer == real_answer:
-        print("Correct.")
-    else:
-        print("Incorrect. The correct answer is:")
-        print(real_answer)
-# This ended up being practically the same thing as make_uppercase(), with the
-# exception of the change between the word upper and lower. Not my intent when
-# originally planning this out. Probably could have made this one function with
-# a boolean determining an if statement between .upper() and .lower(), based on
-# the user input from main(). If I have time I might change that.
 
 
 def concatenation():
