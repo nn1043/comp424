@@ -12,6 +12,7 @@ sequences = {}
 dict_counter = 0
 upperlower = ""
 
+
 def main():
     """
 This is the main function that runs when the program is started. It acts as the
@@ -106,12 +107,12 @@ unecessary repetition of code.
 
 
 def make_upperlower():
-        """
+    """
 This function takes the desired test sequence and applies .upper() or .lower()
 to it, and tests to see if the user's input response matches. This function is
 a modified version of make_uppercase() and make_lowercase(), now removed
 functions.
-        """
+    """
     choose_sequence()
     global in_use_seq  # Again, I broke something and needed to reissue the
     if in_use_seq == []:  # global parameter in order to avoid using a local
