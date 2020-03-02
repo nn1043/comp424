@@ -6,3 +6,5 @@ completed. The code is in regulation with pycodestyle.
 user_interface.py - This program is an improvement on my task_manager() function, which is used as a text-based user interface. The goal is to preserve code lines while improving programmer functionality. Will be used as my standard UI for all text-based Python programs. No in-line documentation exists. The code is in regulation with pycodestyle.
 
 read_write_demo.py - This program serves as practice with reading and writing text files in Python. This program utilizes 1.txt and 2.txt. No in-line documentation exists. The code is in regulation with pycodestyle.
+
+RPG.py - This program aims to create a basic command-line interface, text-based, role-playing game. It will take advantage of Python read and write functions to create 'saved data.' This project is intended to take a longer period of time to complete.
