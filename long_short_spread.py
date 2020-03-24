@@ -6,10 +6,10 @@ Created 3/20/20
 
 
 def main():
-    user_input = input("List or Calculate: ")
+    user_input = input("LIST or CALC: ")
     if user_input.upper() == "LIST":
         list_spread()
-    elif user_input.upper() == "CALCULATE":
+    elif user_input.upper() == "CALC":
         calculator()
 
 
@@ -46,16 +46,17 @@ def list_spread():
 
 def calculator():
     run = True
+    print("Quit: QUIT")
+    into_each = input("Spread Amount: ")
     while run is True:
         relative_price = input("Price: ")
-        into_each = input("Spread Amount: ")
-        price = float(relative_price)
-        spread = float(into_each)
-        to_buy = spread / price
-        print(round(to_buy, 0))
-        more_calc = input("Quit (Y|N) ")
-        if more_calc.upper() == "Y":
+        if relative_price.upper() == "QUIT":
             run = False
+        else:
+            price = float(relative_price)
+            spread = float(into_each)
+            to_buy = spread / price
+            print(round(to_buy, 0))
 
 
 main()
