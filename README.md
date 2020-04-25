@@ -7,6 +7,8 @@ user_interface.py - This program is an improvement on my task_manager() function
 
 read_write_demo.py - This program serves as practice with reading and writing text files in Python. This program utilizes 1.txt and 2.txt. No in-line documentation exists. The code is in regulation with pycodestyle.
 
-RPG.py - This program aims to create a basic command-line interface, text-based, role-playing game. It will take advantage of Python read and write functions to create 'saved data.' This project is intended to take a longer period of time to complete.
+RPG.py - Unfinished project intended to focus on reading and writing text files in Python.
 
 long_short_spread.py - This program is designed to aid me in quickly calculating equal value long/short spreads for use in stock trading. Using a relative price and hedge amount as entered by the user, the program returns the required number of shares to purchase for all prices +/- $1.00 of the entered price. As I am the intended user, there are no exception handlers. Some in-line documentation exists. The code is in regulation with pycodestyle.
+
+trading_bot.py - Unfinished project intended to utilize APIs in Python and JSON data cleaning. Some elements from this project were later used in COMP 574.
